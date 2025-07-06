@@ -1,0 +1,76 @@
+{
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+  },
+  "body": {
+    "check_runs": [
+      {
+        "check_run_id": 1814,
+        "check_id": 1,
+        "check_run_url": "http://anomalo.acme.com/dashboard/check_runs/1814",
+        "run_config": {
+          "check": "ColumnRange",
+          "params": {
+            "low": null,
+            "high": 80.0,
+            "table": "dbt_food.orders",
+            "column": "amount",
+            "time_unit": "date",
+            "time_when": "2025-07-03 00:00:00",
+            "time_interval": 1,
+            "priority_level": "normal",
+            "query_time_col": "created",
+            "custom_where_sql": null,
+            "customer_timezone": "America/New_York",
+            "column_filter_list": null,
+            "custom_check_title": null,
+            "query_time_col_type": "date",
+            "pass_on_no_data_error": false,
+            "auto_time_series_length": 1500,
+            "time_when_lag_intervals": 0,
+            "alert_default_notif_channel": true
+          },
+          "check_id": 1,
+          "_metadata": {
+            "check_type": "rule",
+            "description": "amount values are less than 80.0",
+            "check_message": "amount values are less than 80.0",
+            "priority_level": "normal",
+            "is_system_check": false,
+            "check_message_html": "<span class=\"message_entity anomalo_column\">amount</span> values are less than 80.0"
+          }
+        },
+        "results_pending": false,
+        "results": {
+          "success": false,
+          "evaluated_message": "amount has 15 (14.9%) records with values greater than 80 on 2025-07-03",
+          "history_message": "\ud83c\udd95 _This check failed its first run_",
+          "statistic": 15.0,
+          "statistic_name": "number of values outside of the range",
+          "sample_rows_bad_sql": "WITH dg_subquery AS\n  ( SELECT *\n   FROM `dbt_food`.`orders`\n   WHERE (`created` >= cast('2025-07-03' AS DATETIME)\n          AND `created` < cast('2025-07-04' AS DATETIME)) )\nSELECT *\nFROM dg_subquery\nWHERE `amount` IS NOT NULL\n  AND (amount > 80)",
+          "sample_rows_good_sql": "WITH dg_subquery AS\n  ( SELECT *\n   FROM `dbt_food`.`orders`\n   WHERE (`created` >= cast('2025-07-03' AS DATETIME)\n          AND `created` < cast('2025-07-04' AS DATETIME)) )\nSELECT *\nFROM dg_subquery\nWHERE `amount` IS NOT NULL\n  AND amount <= 80",
+          "sample_rows_bad_csv_url": "http://anomalo.acme.com/get/eyJ1cmwiOiJzMzovL2Fub21hbG8tY3VzdG9tZXItam9lLXRlc3QtMS9rOHMvcXVhbGl0eS1jaGVjay1jc3Ytc2FtcGxlcy9zemdkemN5enVlaTY1bGNjNWlvcHg0dzZsaS5jc3YiLCJqb2JfcnVuX2lkIjoxODE0LCJ0eXBlIjoic2l0ZV9hcHBzLm1haW4ubW9kZWxzLmpvYnMuUzNEYXNoYm9hcmRMaW5rRm9ybWF0dGVyIn0:hdGIBKp1fsIMbuXG0ZMJ9k0X0KkqcF_Q_zcK0bx_NLA",
+          "sample_rows_good_csv_url": "http://anomalo.acme.com/get/eyJ1cmwiOiJzMzovL2Fub21hbG8tY3VzdG9tZXItam9lLXRlc3QtMS9rOHMvcXVhbGl0eS1jaGVjay1jc3Ytc2FtcGxlcy90ZDVzc3V5enVlaTY1bGNjNWlvcHg0dzZsaS5jc3YiLCJqb2JfcnVuX2lkIjoxODE0LCJ0eXBlIjoic2l0ZV9hcHBzLm1haW4ubW9kZWxzLmpvYnMuUzNEYXNoYm9hcmRMaW5rRm9ybWF0dGVyIn0:6o9ic-u1sVrBMHFaIQ_k5u2g0uhcBJUvxlCzDrmoitc",
+          "errored": null,
+          "exception_msg": null,
+          "exception_traceback": null,
+          "check_status_image_url": "https://acme.s3.amazonaws.com/k8s/quality-check-runs/tnglpiqzuei65lcc5iopx4w6li.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYOMSBN2OT3IY6QYU%2F20250703%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250703T130038Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=5f6392bf9e964fc136afba36c96b43e5f8f6f5ca05eb22f0ea13e9edb21634fb"
+        },
+        "created": "2025-07-03T12:59:57.895166Z",
+        "created_by": {
+          "id": 1,
+          "name": "Admin User"
+        },
+        "modified": "2025-07-03T13:00:43.555821Z",
+        "completed_at": "2025-07-03T13:00:42.407588Z",
+        "last_edited_at": "2025-07-03T12:58:44.351923Z",
+        "last_edited_by": {
+          "id": 1,
+          "name": "Admin User"
+        },
+        "triage_status": "unacknowledged"
+      }
+    ]
+  }
+}
