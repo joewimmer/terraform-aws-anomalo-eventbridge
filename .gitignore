@@ -35,3 +35,6 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Ignore any zip files, which are often used for packaging Terraform modules or other resources
+*.zip

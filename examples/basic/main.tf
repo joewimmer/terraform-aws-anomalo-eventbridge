@@ -12,7 +12,15 @@ provider "aws" {
   region = "us-west-1"
 }
 
-module "anomalo_eventbridge_base" {
+module "anomalo_eventbridge" {
   source              = "git::https://github.com/joewimmer/terraform-aws-anomalo-eventbridge.git"
-  eventbridge_api_key = var.eventbridge_api_key
+}
+
+output "api_endpoint" {
+  value       = module.anomalo_eventbridge.api_endpoint
+  description = "The endpoint URL of the Anomalo HTTP API"
+}
+
+output "api_key" {
+  value = module.anomalo_eventbridge.anomalo_api_key
 }
