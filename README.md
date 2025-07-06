@@ -38,6 +38,9 @@ No modules.
 | [aws_lambda_permission.allow_http_api](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
 | [aws_secretsmanager_secret.anomalo_eventbridge_publisher_api_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret) | resource |
 | [aws_secretsmanager_secret_version.anomalo_eventbridge_publisher_api_key_version](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret_version) | resource |
+| [aws_wafv2_ip_set.allow_ips](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/wafv2_ip_set) | resource |
+| [aws_wafv2_web_acl.api_acl](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/wafv2_web_acl) | resource |
+| [aws_wafv2_web_acl_association.api_acl_association](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/wafv2_web_acl_association) | resource |
 | [random_string.anomalo_eventbridge_publisher_api_key](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [random_string.anomalo_secret_suffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [archive_file.lambda_zip](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file) | data source |
@@ -47,6 +50,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_event_bus_name"></a> [event\_bus\_name](#input\_event\_bus\_name) | The name of the EventBridge event bus | `string` | `"anomalo-events"` | no |
+| <a name="input_ip_allow_list"></a> [ip\_allow\_list](#input\_ip\_allow\_list) | List of IP addresses allowed to invoke the Eventbridge publisher Lambda function | `list(string)` | <pre>[<br/>  "0.0.0.0/0"<br/>]</pre> | no |
 
 ## Outputs
 
