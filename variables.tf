@@ -8,7 +8,5 @@ variable "event_bus_name" {
 variable "ip_allow_list" {
   description = "List of IP addresses allowed to invoke the Eventbridge publisher Lambda function"
   type        = list(string)
-  default     = [
-    "0.0.0.0/0"
-  ]
+  default     = []
 }

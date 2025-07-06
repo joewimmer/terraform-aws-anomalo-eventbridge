@@ -1,6 +1,6 @@
 output "api_endpoint" {
-  value       = aws_apigatewayv2_api.anomalo_http_api.api_endpoint
-  description = "The endpoint URL of the Anomalo HTTP API"
+  value       = "${aws_api_gateway_stage.default_stage.invoke_url}/events/anomalo"
+  description = "The endpoint URL of the Anomalo Events API"
 }
 
 output "event_bus_arn" {

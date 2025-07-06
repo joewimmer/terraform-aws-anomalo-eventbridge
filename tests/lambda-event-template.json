@@ -1,8 +1,4 @@
 {
-  "headers": {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-  },
   "body": {
     "check_runs": [
       {
