@@ -18,7 +18,7 @@ module "anomalo_eventbridge" {
 
 output "api_endpoint" {
   value       = module.anomalo_eventbridge.api_endpoint
-  description = "The endpoint URL of the Anomalo HTTP API"
+  description = "The endpoint URL of the Anomalo Eventbridge REST API"
 }
 
 output "api_key" {
