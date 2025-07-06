@@ -1,8 +1,3 @@
-locals {
-  prefix = "Anomalo-EventBridge"
-}
-
-
 resource "aws_iam_role" "default" {
   name = "${local.prefix}-Role"
   assume_role_policy = jsonencode({
