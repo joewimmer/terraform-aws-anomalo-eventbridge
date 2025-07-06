@@ -38,6 +38,7 @@ No modules.
 | [aws_lambda_permission.allow_http_api](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
 | [aws_secretsmanager_secret.anomalo_eventbridge_publisher_api_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret) | resource |
 | [aws_secretsmanager_secret_version.anomalo_eventbridge_publisher_api_key_version](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret_version) | resource |
+| [random_string.anomalo_eventbridge_publisher_api_key](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [random_string.anomalo_secret_suffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [archive_file.lambda_zip](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file) | data source |
 
@@ -46,12 +47,12 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_event_bus_name"></a> [event\_bus\_name](#input\_event\_bus\_name) | The name of the EventBridge event bus | `string` | `"anomalo-events"` | no |
-| <a name="input_eventbridge_api_key"></a> [eventbridge\_api\_key](#input\_eventbridge\_api\_key) | EventBridge API key for authentication | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
+| <a name="output_anomalo_api_key"></a> [anomalo\_api\_key](#output\_anomalo\_api\_key) | This is the Anomalo API key used to authenticate requests from Anomalo to EventBridge |
 | <a name="output_api_endpoint"></a> [api\_endpoint](#output\_api\_endpoint) | The endpoint URL of the Anomalo HTTP API |
 | <a name="output_event_bus_arn"></a> [event\_bus\_arn](#output\_event\_bus\_arn) | The ARN of the Anomalo EventBridge event bus |
 <!-- END_TF_DOCS -->
