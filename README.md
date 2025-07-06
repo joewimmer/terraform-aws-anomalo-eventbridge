@@ -1,3 +1,8 @@
+# Terraform Module: Anomalo EventBridge Publisher
+
+This Terraform module sets up an AWS EventBridge event bus and a Lambda function that publishes events to it. It also creates an HTTP API using API Gateway to trigger the Lambda function. The module includes the necessary IAM roles and policies to allow the Lambda function to publish events to EventBridge.
+
+This module is designed to be used with Anomalo, which can be instrumented to send events to the EventBridge event bus for further processing, analysis, or integration with other services.
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
