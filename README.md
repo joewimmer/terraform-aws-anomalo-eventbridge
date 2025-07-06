@@ -1,6 +1,6 @@
 # Terraform Module: Anomalo EventBridge Publisher
 
-This Terraform module sets up an AWS EventBridge event bus and a Lambda function that publishes events to it. It also creates an HTTP API using API Gateway to trigger the Lambda function. The module includes the necessary IAM roles and policies to allow the Lambda function to publish events to EventBridge.
+This Terraform module sets up an AWS EventBridge event bus and a Lambda function that publishes events to it. It also creates an REST API using API Gateway to trigger the Lambda function. The module includes the necessary IAM roles and policies to allow the Lambda function to publish events to EventBridge.
 
 This module is designed to be used with Anomalo, which can be instrumented to send events to the EventBridge event bus for further processing, analysis, or integration with other services.
 <!-- BEGIN_TF_DOCS -->
@@ -67,3 +67,37 @@ No modules.
 | <a name="output_api_endpoint"></a> [api\_endpoint](#output\_api\_endpoint) | The endpoint URL of the Anomalo Events API |
 | <a name="output_event_bus_arn"></a> [event\_bus\_arn](#output\_event\_bus\_arn) | The ARN of the Anomalo EventBridge event bus |
 <!-- END_TF_DOCS -->
+
+## Usage
+
+```hcl
+module "anomalo_eventbridge_publisher" {
+  source = "github.com/joewimmer/terraform-aws-anomalo-eventbridge" 
+}
+```
+
+You can also specify the `event_bus_name` and `ip_allow_list` as needed:
+
+```hcl
+module "anomalo_eventbridge_publisher" {
+  source = "github.com/joewimmer/terraform-aws-anomalo-eventbridge"
+  event_bus_name = "my-custom-event-bus"
+  ip_allow_list = ["192.0.2.0/24"]  
+}
+```
+
+
+Once installed, configure Anomalo to send all deployment events to the EventBridge event bus. This can be done by overloading the Atlan Integration with the Anomalo EventBridge Publisher API key and endpoint.
+
+The Atlan Integration automatically appends `/events/anomalo` to the API endpoint, so you can use the following URL format:
+
+```
+<api_endpoint>/production
+```
+
+For example:
+
+```
+hjc3umfkqd.execute-api.us-west-2.amazonaws.com/production
+```
+
