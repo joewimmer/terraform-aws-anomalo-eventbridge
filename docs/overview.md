@@ -28,4 +28,31 @@ resource "aws_cloudwatch_event_rule" "anomalo_events" {
     })
     event_bus_name = module.anomalo_eventbridge.event_bus_name
 }
+```
+
+
+## Filtering on Event Types
+
+One of the most useful features of EventBridge is the ability to filter events based on their type. Anomalo sends different types of events, such as `check_run`, `check_run_completed`, and `check_run_failed`. You can filter these events in your EventBridge rule.
+
+```hcl
+resource "aws_cloudwatch_event_rule" "anomalo_events" {
+  name        = "anomalo-events"
+  description = "Anomalo events from the webhook"
+  event_pattern = jsonencode({
+    source = ["com.anomalo.events"]
+    detail-type = ["check_run", "check_run_completed", "check_run_failed"]
+  })
+  event_bus_name = module.anomalo_eventbridge.event_bus_name
+}
+```
+
+## Why
+
+Using EventBridge for Anomalo events provides several benefits:
+- **Scalability**: EventBridge can handle a large volume of events, making it suitable for high-frequency data.
+- **Flexibility**: You can easily route events to different targets such as Lambda functions, SQS queues, or SNS topics.
+- **Integration**: EventBridge integrates seamlessly with other AWS services, allowing you to build complex workflows and data processing pipelines.    
+- **Cost-Effective**: You only pay for the events you process, making it a cost-effective solution for event-driven architectures.
+
 
