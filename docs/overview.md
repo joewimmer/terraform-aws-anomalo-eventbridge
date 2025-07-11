@@ -4,7 +4,7 @@ Anomalo can be configured to send all check run results a webhook destination. T
 
 ## Architecture
 
-![Anomalo EventBridge Architecture](images/Eventbridge-arch.pmg)
+![Anomalo EventBridge Architecture](img/Eventbridge-arch.png)
 
 ## Usage
 
