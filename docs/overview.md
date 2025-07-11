@@ -55,7 +55,4 @@ Using EventBridge for Anomalo events provides several benefits:
 - **Integration**: EventBridge integrates seamlessly with other AWS services, allowing you to build complex workflows and data processing pipelines.
 - **Cost-Effective**: You only pay for the events you process, making it a cost-effective solution for event-driven architectures.
 
----
-
-Let me know if you need this formatted further for internal documentation standards or publishing pipelines.
 
