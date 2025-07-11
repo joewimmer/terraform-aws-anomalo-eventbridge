@@ -4,7 +4,7 @@ Anomalo can be configured to send all check run results a webhook destination. T
 
 ## Architecture
 
-![Anomalo EventBridge Architecture](https://raw.githubusercontent.com/AnomaloLabs/terraform-aws-anomalo-eventbridge/main/docs/architecture.png)
+![Anomalo EventBridge Architecture](images/Eventbridge-arch.pmg)
 
 ## Usage
 
