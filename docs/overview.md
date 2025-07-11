@@ -10,7 +10,7 @@ Anomalo can be configured to send all check run results a webhook destination. T
 
 ```hcl
 module "anomalo_eventbridge" {
-  source              = "git::https://github.com/joewimmer/terraform-aws-anomalo-eventbridge.git"
+  source              = "git::https://github.com/datagravity-ai/anomalo-labs/terraform/modules/terraform-aws-anomalo-eventbridge.git"
 }
 ```
 
